@@ -1,0 +1,53 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="top_bg">
+    <image src="/images/top_bg.jpg" />
+  </view>
+  <view class="h3_title">
+    <image src="/images/h3_title.png" />
+  </view>
+  <view class="rotate">
+    <image src="/images/rotate_1.png" class="rotate_1" />
+    <image src="/images/rotate_2.png" class="rotate_2" />
+    <image src="/images/rotate_3.png" class="rotate_3" />
+  </view>
+  <text class="h3_text">专业诊股 锁定买卖时机</text>
+  <view class="getStock">
+    <form bindsubmit="submitStock">
+      <input placeholder="输入股票代码/名称" placeholder-style="color:#ccc" type="text" class="stock-input" name="stock" />
+      <button form-type="submit" class="diagnose-button">立即诊断</button>
+    </form>
+  </view>
+  <view class="points">
+    <ul>
+      <li>
+        <image src="/images/point_1.jpg"/>
+        <rich-text><p>五大维度精准分析</p><p>洞悉潜力股票</p></rich-text>
+      </li>
+      <li>
+        <image src="/images/point_2.jpg"/>
+        <rich-text><p>全天候在线盯盘</p><p>实时操作解析</p></rich-text>
+      </li>
+      <li>
+        <image src="/images/point_3.jpg"/>
+        <rich-text><p>第一时间反馈诊股结果</p><p>并答疑解难</p></rich-text>
+      </li>
+    </ul>
+  </view>
+  <view class="else">
+    <image src="/images/else.jpg" />
+  </view>
+  <view class="dialog" wx:if="{{showDialog}}">
+    <view class="content progress" wx:if="{{showProgress}}">
+      <text>正在读取报告</text>
+      <progress percent="{{percent}}" color="#ef8717"></progress>
+    </view>
+    <view class="content" wx:if="{{!showProgress}}">
+      <text>诊断报告已调取完成</text>
+      <form bindsubmit="submitPhone">
+        <input placeholder="请输入接收短信号码" type="number" placeholder-style="color:#ccc" type="text" name="phone" />
+        <button form-type="submit">免费查看</button>
+      </form>
+    </view>>
+  </view>
+</view>
